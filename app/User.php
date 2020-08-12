@@ -7,9 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class Profile extends Authenticatable  implements JWTSubject
+class User extends Authenticatable  implements JWTSubject
 {
     use Notifiable;
+
+    protected $table = 'profiles';
 
     /**
      * The attributes that are mass assignable.

@@ -30,6 +30,7 @@ class ProfileRepository implements IProfileRepository
 
     public function create(array $data)
     {
+        $data['password'] = bcrypt($data['password']);
         return $this->model->create($data);
     }
 
